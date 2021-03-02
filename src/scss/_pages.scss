@@ -1,0 +1,37 @@
+.page {
+  grid-column: center-start / center-end;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  column-gap: 2rem;
+  row-gap: 4rem;
+  font-size: 1.6rem;
+  padding: 3rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 1.5rem;
+  }
+  
+  &__checkout {
+    .product {
+      &__details {
+        margin: .4rem 0;
+      }
+    }
+
+    .payment {
+      &__form {}
+
+      &__response {
+
+        .message {
+          &--success { color: $color-blue; }
+          &--fail { color: $color-red; }
+      
+          &__item {
+            margin: .5rem 0;
+          }
+        }
+      }
+    }
+  }
+}

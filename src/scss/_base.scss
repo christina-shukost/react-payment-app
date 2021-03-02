@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-black;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns: [full-start] 1fr [center-start] minmax(25rem, 120rem) [center-end] 1fr [full-end];
+  gap: 3rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    gap: 1.5rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    gap: .5rem;
+  }
+}
+
+.btn {
+  font-family: $font-primary;
+  font-size: 1.5rem;
+  padding: .75rem 1.75rem;
+  cursor: pointer;
+  pointer-events: all !important;
+  
+  &:disabled { cursor: not-allowed; }
+}
